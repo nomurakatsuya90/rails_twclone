@@ -3,6 +3,7 @@ class PostMessagesController < ApplicationController
   end
 
   def new
+    @post_message = PostMessage.new
   end
 
   def edit
