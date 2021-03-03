@@ -22,6 +22,8 @@ class PostMessagesController < ApplicationController
   end
 
   def confirm
+    @post_message = PostMessage.new(post_message_params)
+    render :new if @post_message.invalid?
   end
   private
   def post_message_params

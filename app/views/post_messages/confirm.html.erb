@@ -1,2 +1,7 @@
-<h1>PostMessages#confirm</h1>
-<p>Find me in app/views/post_messages/confirm.html.erb</p>
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @post_message, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>本文:<%= @post_message.content %></p>
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

@@ -1,5 +1,5 @@
-<%# <%= form_with(model: @post_message, local: true ,url: choose_new_or_edit ) do |form| %> %>
-<%= form_with(model: @post_message, local: true ,url: post_messages_path ) do |form| %><!--投稿画面単体テスト用-->
+<%= form_with(model: @post_message, local: true ,url: choose_new_or_edit ) do |form| %>
+<%# <%= form_with(model: @post_message, local: true ,url: post_messages_path ) do |form| %><!--投稿画面単体テスト用-->
   <% if @post_message.errors.any? %>
     <div id="error_explanation">
       <h2><%= @post_message.errors.count %>件のエラーがあります。</h2>
