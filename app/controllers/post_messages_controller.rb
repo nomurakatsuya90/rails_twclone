@@ -1,4 +1,5 @@
 class PostMessagesController < ApplicationController
+  before_action :set_post_message, only: [:edit, :update, :destroy]
   def index
   end
 
@@ -20,7 +21,14 @@ class PostMessagesController < ApplicationController
 
   def edit
   end
-
+  def update
+    if @post_message.update(post_message_params)
+      redirect_to post_messages_path, notice: "ブログを編集しました！"
+    else
+      render :edit
+    end
+  end
+  
   def confirm
     @post_message = PostMessage.new(post_message_params)
     render :new if @post_message.invalid?
@@ -29,4 +37,7 @@ class PostMessagesController < ApplicationController
   def post_message_params
     params.require(:post_message).permit(:title, :content)
   end
+end
+def set_post_message
+  @post_message = PostMessage.find(params[:id])
 end
