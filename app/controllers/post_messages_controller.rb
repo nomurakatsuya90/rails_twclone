@@ -44,7 +44,8 @@ class PostMessagesController < ApplicationController
   def post_message_params
     params.require(:post_message).permit(:title, :content)
   end
+  def set_post_message
+    @post_message = PostMessage.find(params[:id])
+  end
 end
-def set_post_message
-  @post_message = PostMessage.find(params[:id])
-end
+
