@@ -1,6 +1,7 @@
 class PostMessagesController < ApplicationController
   before_action :set_post_message, only: [:edit, :update, :destroy]
   def index
+    @post_messages = PostMessage.all
   end
 
   def new
