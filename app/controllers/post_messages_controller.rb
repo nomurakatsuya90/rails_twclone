@@ -13,7 +13,7 @@ class PostMessagesController < ApplicationController
       render :new
     else
       if @post_message.save
-        redirect_to post_messages_path, notice: "ブログを作成しました！"  #一覧画面へ遷移
+        redirect_to post_messages_path, notice: "tweetを作成しました！"  #一覧画面へ遷移
       else
         render :new  #同画面を再描画
       end
@@ -24,7 +24,7 @@ class PostMessagesController < ApplicationController
   end
   def update
     if @post_message.update(post_message_params)
-      redirect_to post_messages_path, notice: "ブログを編集しました！"
+      redirect_to post_messages_path, notice: "tweetを編集しました！"
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class PostMessagesController < ApplicationController
 
   def destroy
     @post_message.destroy
-    redirect_to post_messages_path, notice:"ブログを削除しました！"
+    redirect_to post_messages_path, notice:"tweetを削除しました！"
   end
 
   private
