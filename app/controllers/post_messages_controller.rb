@@ -34,6 +34,12 @@ class PostMessagesController < ApplicationController
     @post_message = PostMessage.new(post_message_params)
     render :new if @post_message.invalid?
   end
+
+  def destroy
+    @post_message.destroy
+    redirect_to post_messages_path, notice:"ブログを削除しました！"
+  end
+
   private
   def post_message_params
     params.require(:post_message).permit(:title, :content)
