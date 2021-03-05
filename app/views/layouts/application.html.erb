@@ -10,6 +10,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header clearfix">
+    <ul>
+      <div>
+        <li class="left"><a href="#">Achieve</a></li>
+        <li class="left"><a href="#">お問い合わせ</a></li>
+      </div>
+      <!-- 右寄せfloatするとサインアップが一番右にきてしまうための対処※1-->
+      <div class="right-group">
+        <li class="right"><a href="#">サインアップ</a></li>
+        <li class="right"><a href="#">ログイン</a></li>
+      </div>
+    </ul>
+    </header>
+    <section class="main-header">
+      <%= image_tag 'twitter_clone_title.png' %>
+      <%# <img src="/app/assets/images/img2.jpg" alt="diving画像"> %><!--これだと表示されない-->
+    </section>
+    <section class="view_part">
+      <%= yield %>
+    </section>
+    <footer>
+      <div>
+        <p>運営会社DIVE INTO CODE株式会社</p>
+        <p>© 2015-2018 Copyright DIVE INTO CODE Corp.</p>
+      </div>
+    </footer>
   </body>
 </html>
